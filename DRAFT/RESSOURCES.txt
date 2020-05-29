@@ -2,6 +2,7 @@ https://www.pulsweb.fr/bi-mobile/
 https://bipointblog.wordpress.com/2014/05/28/implementation-of-a-bi-system-using-microsoft-bi-stack-introduction/
 https://cours.etsmtl.ca/mti820/public_docs/acetates/MTI820-Acetates-ModelisationDimensionnelle_1pp.pdf
 
+ssrs mobile reports
 
 
 https://github.com/MassStreetAnalytics/etl-framework
