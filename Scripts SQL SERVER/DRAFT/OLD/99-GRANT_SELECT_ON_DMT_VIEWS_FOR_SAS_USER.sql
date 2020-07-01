@@ -1,0 +1,52 @@
+﻿USE [$(v_BaseDeDonnees)]
+GO
+
+DECLARE @req NVARCHAR(MAX);
+
+SET @req = '';
+
+SELECT @req = @req +
+	'
+		PRINT ''''
+		PRINT ''****************************''
+		PRINT '' GRANT SELECT ON VIEW '+TABLE_SCHEMA+'.'+TABLE_NAME +'''
+		PRINT ''****************************''
+		PRINT ''''
+		BEGIN TRY
+			IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.VIEWS WHERE TABLE_SCHEMA = '''+TABLE_SCHEMA+''' AND TABLE_NAME ='''+TABLE_NAME+''')
+			BEGIN
+				IF @@SERVERNAME = ''WIDV499A\ROSTAMD''
+				BEGIN
+					GRANT SELECT ON '+TABLE_SCHEMA+'.'+TABLE_NAME +' TO USER_ROSTAM_SAS ;
+					PRINT ''OK !'';
+				END
+				ELSE IF @@SERVERNAME = ''WIRE499A\MSBI''
+				BEGIN
+					GRANT SELECT ON '+TABLE_SCHEMA+'.'+TABLE_NAME +' TO ROSTAM_SAS ;
+					PRINT ''OK !'';
+				END
+				ELSE IF @@SERVERNAME = ''WIIN534A\MSBI''
+				BEGIN
+					GRANT SELECT ON '+TABLE_SCHEMA+'.'+TABLE_NAME +' TO INT_ROSTAM ;
+					PRINT ''OK !'';
+				END
+				ELSE IF @@SERVERNAME = ''WIPR534A\MSBI''
+				BEGIN
+					GRANT SELECT ON '+TABLE_SCHEMA+'.'+TABLE_NAME +' TO USER_ROSTAM_SAS ;
+					PRINT ''OK !'';
+				END
+				ELSE PRINT ''Serveur non reconnu : ''+@@SERVERNAME;
+			END
+			ELSE PRINT ''La vue n''''existe pas'';
+		END TRY
+		BEGIN CATCH
+			PRINT ERROR_MESSAGE();
+		END CATCH
+		PRINT ''''
+	'
+FROM INFORMATION_SCHEMA.VIEWS
+WHERE TABLE_SCHEMA = 'dmt' --On prend juste le schéma DMT
+AND TABLE_NAME NOT IN ('V_FCT_Fait_RAP_001','V_FCT_Fait_RAP_001_CORR') --On prend pas les vues des rapports
+
+EXEC (@req);
+GO

@@ -1,0 +1,46 @@
+﻿--:setvar v_Environnement "REC"
+:setvar v_BaseDeDonnees "etools"
+--:setvar v_Job_COLLECTE "ROSTAM_COLLECTE"
+--:setvar v_JobConfCategoryName "ROSTAM"
+--:setvar v_JobConfOwnerLoginName "sa"
+--:setvar v_JobConfServerName "WIRE499A.intra-dev01.bdf-dev01.local\MSBI"
+--:setvar v_Job_ROSTAM_TransfertFileOG "ROSTAM_TransfertFileOG"
+--:setvar v_SSISConfPackageFolder "\ROSTAM\"
+--:setvar v_SSISRostamFolder "\\wire499a\AU_ROSTAM\"
+--:setvar v_SSISEAIFolder "\\Bi1198fw\au_rostam\"
+--:setvar v_SSISProxy "Proxy_ROSTAM_IS"
+--:setvar v_Chemin_mdf "G:\MSBI\SQL3\MSSQL10_50.MSBI\MSSQL\DATA\"
+--:setvar v_Chemin_ldf "L:\MSBI\SQL3\MSSQL10_50.MSBI\MSSQL\DATA\"
+--:setvar v_Size "5120KB"
+--:setvar v_Max_size_mdf "UNLIMITED"
+--:setvar v_Max_size_ldf "2048GB"
+--:setvar v_Filegrowth "10%"
+--:setvar v_Partition_AnneeDebut "2008"
+--:setvar v_Partition_AnneeFin   "2021"
+--:setvar v_PartageOG "\\PAR-ONEGATE.intra-dev01.bdf-dev01.local\AU_ONEGATE\BATCH\FRCB851\BDF\MTI\"
+
+--PRINT N'***********************************************************************'
+--PRINT N'***********************************************************************'
+--PRINT N'* VARIABLES : '
+--PRINT N'	v_Environnement					= $(v_Environnement)'
+--PRINT N'	v_BaseDeDonnees					= $(v_BaseDeDonnees)'
+--PRINT N'	v_Job_COLLECTE					= $(v_Job_COLLECTE)'
+--PRINT N'	v_JobConfCategoryName			= $(v_JobConfCategoryName)'
+--PRINT N'	v_JobConfOwnerLoginName			= $(v_JobConfOwnerLoginName)'
+--PRINT N'	v_JobConfServerName				= $(v_JobConfServerName)'
+--PRINT N'	v_Job_ROSTAM_TransfertFileOG	= $(v_Job_ROSTAM_TransfertFileOG)'
+--PRINT N'	v_SSISConfPackageFolder			= $(v_SSISConfPackageFolder)'
+--PRINT N'	v_SSISRostamFolder				= $(v_SSISRostamFolder)'
+--PRINT N'	v_SSISProxy						= $(v_SSISProxy)'
+--PRINT N'	v_Chemin_mdf					= $(v_Chemin_mdf)'
+--PRINT N'	v_Chemin_ldf					= $(v_Chemin_ldf)'
+--PRINT N'	v_Size							= $(v_Size)'
+--PRINT N'	v_Max_size_mdf					= $(v_Max_size_mdf)'
+--PRINT N'	v_Max_size_ldf					= $(v_Max_size_ldf)'
+--PRINT N'	v_Filegrowth					= $(v_Filegrowth)'
+--PRINT N'	v_Partition_AnneeDebut			= $(v_Partition_AnneeDebut)'
+--PRINT N'	v_Partition_AnneeFin			= $(v_Partition_AnneeFin)'
+--PRINT N'	v_PartageOG						= $(v_PartageOG)'
+--PRINT N'* FIN VARIABLES '
+--PRINT N'***********************************************************************'
+--PRINT N'***********************************************************************'

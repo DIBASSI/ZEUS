@@ -1,0 +1,2 @@
+1. Updater le nom de la base cible
+2. Attention aux chemins utilisés dans la table DWH_PARAM_BANK (notamment source et export)

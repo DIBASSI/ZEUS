@@ -1,0 +1,5 @@
+workspace.xml
+*.bak
+*.docx
+.idea/
+config.yaml

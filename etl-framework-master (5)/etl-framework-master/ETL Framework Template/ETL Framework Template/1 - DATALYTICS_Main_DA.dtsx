@@ -1,0 +1,920 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/5/2019 5:56:13 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MORGON"
+  DTS:CreatorName="CAMCALUX\mdibassi"
+  DTS:DelayValidation="True"
+  DTS:DTSID="{4BA96F25-5B80-4407-995A-1A63AAD4D395}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
+  DTS:LocaleID="2060"
+  DTS:ObjectName="1 - DATALYTICS_Main_DA"
+  DTS:PackageType="5"
+  DTS:VersionBuild="308"
+  DTS:VersionGUID="{0CF5A555-8578-4857-8F79-42CEB95A3C09}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0F4BE672-6FBB-415D-B893-7137087F4E06}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Obj_DBSourceNames">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D5F7B978-6B22-48AB-B2F6-1E26C9F21683}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Var_date_DateDeCloture">
+      <DTS:VariableValue
+        DTS:DataType="7">4/23/2019 5:05:00 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B9822130-FDEB-4D2A-B92A-F569CAFBFB8B}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Var_Int_IdImport">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A8CEF123-2DCD-47E6-8D73-6CED468AFA81}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Var_Int_TraitementID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2B6B3C02-1D88-4CC6-9FAD-39BC5140B6E1}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::Var_String_BackupPath] +&quot;\\Anomalie\\&quot; +@[User::Var_String_BackupName]+&quot;.bak&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Var_String_BackupAnoFullPath">
+      <DTS:VariableValue
+        DTS:DataType="8">R:\Backup restore\Anomalie\.bak</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DC20196C-0B61-48E6-8AF5-A18F8A3F1C06}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Var_String_BackupDirectory">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A0BA13EC-7FB0-47D3-8E5E-71440BD8CF92}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::Var_String_BackupPath] + @[User::Var_String_BackupName]+&quot;.bak&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Var_String_BackupFullPath">
+      <DTS:VariableValue
+        DTS:DataType="8">R:\Backup restore.bak</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A5C2D7FC-5FA2-4194-8E2C-0273C8C49990}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Var_String_BackupName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{736CF90C-B458-4B38-97D3-2F5439F99F81}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Var_String_BackupPath">
+      <DTS:VariableValue
+        DTS:DataType="8">R:\Backup restore</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{68E4F481-E0D4-4948-ABA5-61C5B215105F}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Var_String_DestSchema">
+      <DTS:VariableValue
+        DTS:DataType="8">Schema</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Foreach Loop Container"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:DelayValidation="True"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{4B5AABF1-126F-4508-BF8E-D16B3D75648A}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Foreach Loop Container">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachADOEnumerator"
+        DTS:DTSID="{7D1960B8-3EAB-4A4F-BE6E-B1643C6FD8EE}"
+        DTS:ObjectName="{7D1960B8-3EAB-4A4F-BE6E-B1643C6FD8EE}">
+        <DTS:ObjectData>
+          <FEEADO
+            EnumType="EnumerateRowsInFirstTable"
+            VarName="User::Obj_DBSourceNames" />
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\DELETE FROM MORGON"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:Description="File System Task"
+          DTS:DTSID="{0F669F8C-6A64-41B8-8FB3-3B7D8B48E541}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DELETE FROM MORGON"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="DeleteFile"
+              TaskSourcePath="User::Var_String_BackupFullPath"
+              TaskIsSourceVariable="True"
+              TaskDestinationPath="$Package::Par_String_BackupDirectory"
+              TaskIsDestinationVariable="True" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\MOVE TO ANOMALIE"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:Description="File System Task"
+          DTS:DTSID="{D86E1359-4705-481D-8B29-6F22CD5FC13F}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="MOVE TO ANOMALIE"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="MoveFile"
+              TaskSourcePath="User::Var_String_BackupFullPath"
+              TaskIsSourceVariable="True"
+              TaskDestinationPath="User::Var_String_BackupAnoFullPath"
+              TaskIsDestinationVariable="True" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\MOVE TO ARCHIVE"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:Description="File System Task"
+          DTS:Disabled="True"
+          DTS:DTSID="{EDDF091F-6A52-4A3B-BB4E-42119835F401}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="MOVE TO ARCHIVE"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:ObjectData />
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Sequence Container 1"
+          DTS:CreationName="STOCK:SEQUENCE"
+          DTS:Description="Sequence Container"
+          DTS:DTSID="{B2190CD5-B846-42A7-9AD0-3A569520FFA0}"
+          DTS:ExecutableType="STOCK:SEQUENCE"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Sequence Container 1">
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Foreach Loop Container\Sequence Container 1\2 - RESTORE BACKUP"
+              DTS:CreationName="Microsoft.ExecutePackageTask"
+              DTS:Description="Execute Package Task"
+              DTS:Disabled="True"
+              DTS:DTSID="{A0527485-0BCC-453A-B76F-26B60D50435A}"
+              DTS:ExecutableType="Microsoft.ExecutePackageTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="2 - RESTORE BACKUP"
+              DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <ExecutePackageTask>
+                  <UseProjectReference>True</UseProjectReference>
+                  <PackageName>2 - DATALYTICS_RESTORE BACKUP.dtsx</PackageName>
+                  <ParameterAssignment>
+                    <ParameterName>Par_Int_IdImport</ParameterName>
+                    <BindedVariableOrParameterName>User::Var_Int_IdImport</BindedVariableOrParameterName>
+                  </ParameterAssignment>
+                </ExecutePackageTask>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Foreach Loop Container\Sequence Container 1\3 - SOURCE TO DATAANALYTICS"
+              DTS:CreationName="Microsoft.ExecutePackageTask"
+              DTS:Description="Execute Package Task"
+              DTS:DTSID="{5B6AF6F6-484D-4F61-92C4-17B34BEF9E53}"
+              DTS:ExecutableType="Microsoft.ExecutePackageTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="3 - SOURCE TO DATAANALYTICS"
+              DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <ExecutePackageTask>
+                  <UseProjectReference>True</UseProjectReference>
+                  <PackageName>3 - DATALYTICS_SOURCE TO DATAANALYTICS.dtsx</PackageName>
+                  <ParameterAssignment>
+                    <ParameterName>Par_Int_IdImport</ParameterName>
+                    <BindedVariableOrParameterName>User::Var_Int_IdImport</BindedVariableOrParameterName>
+                  </ParameterAssignment>
+                </ExecutePackageTask>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Foreach Loop Container\Sequence Container 1\COPY_TO_MORGON_R"
+              DTS:CreationName="Microsoft.FileSystemTask"
+              DTS:DelayValidation="True"
+              DTS:Description="File System Task"
+              DTS:Disabled="True"
+              DTS:DTSID="{38B14286-7598-45A4-BA7E-82377F1DD02A}"
+              DTS:ExecutableType="Microsoft.FileSystemTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="COPY_TO_MORGON_R"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <FileSystemData
+                  TaskOverwriteDestFile="True"
+                  TaskSourcePath="User::Var_String_BackupDirectory"
+                  TaskIsSourceVariable="True"
+                  TaskDestinationPath="User::Var_String_BackupFullPath"
+                  TaskIsDestinationVariable="True" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Foreach Loop Container\Sequence Container 1\SQL Task 002 || DROP DATA BASE  IF EXIST"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:Disabled="True"
+              DTS:DTSID="{1E2AB61B-6D29-4E94-98A5-0CE581A59190}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="SQL Task 002 || DROP DATA BASE  IF EXIST"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{9619F57D-71EE-438A-94C1-6EFBC6598F31}"
+                  SQLTask:SqlStatementSource="DECLARE @p_IdImport int=?&#xA;&#xA;EXECUTE [dwh].[PS_DROP_DATABASE]  @p_IdImport " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::Var_Int_IdImport"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="131"
+                    SQLTask:ParameterSize="15" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\Foreach Loop Container\Sequence Container 1.PrecedenceConstraints[Constraint]"
+              DTS:CreationName=""
+              DTS:DTSID="{EF74BB99-6E78-4298-9250-9CC58CE9F325}"
+              DTS:From="Package\Foreach Loop Container\Sequence Container 1\COPY_TO_MORGON_R"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint"
+              DTS:To="Package\Foreach Loop Container\Sequence Container 1\2 - RESTORE BACKUP" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\Foreach Loop Container\Sequence Container 1.PrecedenceConstraints[Constraint 1]"
+              DTS:CreationName=""
+              DTS:DTSID="{24601666-E3E4-46D4-9553-2888EFEF38E1}"
+              DTS:From="Package\Foreach Loop Container\Sequence Container 1\2 - RESTORE BACKUP"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 1"
+              DTS:To="Package\Foreach Loop Container\Sequence Container 1\3 - SOURCE TO DATAANALYTICS" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\Foreach Loop Container\Sequence Container 1.PrecedenceConstraints[Constraint 2]"
+              DTS:CreationName=""
+              DTS:DTSID="{457721FF-207C-4CAF-BD2F-4DFCD157DE58}"
+              DTS:From="Package\Foreach Loop Container\Sequence Container 1\3 - SOURCE TO DATAANALYTICS"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 2"
+              DTS:To="Package\Foreach Loop Container\Sequence Container 1\SQL Task 002 || DROP DATA BASE  IF EXIST" />
+          </DTS:PrecedenceConstraints>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\SQL Task 001 || Log Debut Import"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{6A9C1811-A0E1-4BC6-B139-2863E90FCC4E}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL Task 001 || Log Debut Import"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{9619F57D-71EE-438A-94C1-6EFBC6598F31}"
+              SQLTask:SqlStatementSource="DECLARE @p_RepertoireOrigine NVARCHAR(255) = ?&#xA; ,@p_RepertoireReception NVARCHAR(255) = ?&#xA; ,@p_NomImport NVARCHAR(255) = ?&#xA; ,@p_Statut NVARCHAR(50) = 'En cours de controle...'&#xA; ,@p_Description NVARCHAR(max) = NULL&#xA; ,@p_IdImport INT = NULL&#xA; ,@p_DateModificationImport NVARCHAR(255) = NULL&#xA; ,@p_DateCreationImport NVARCHAR(255) = NULL&#xA;&#xA;EXECUTE [audit].[PS_LogImport] @p_RepertoireOrigine&#xA; ,@p_RepertoireReception&#xA; ,@p_NomImport&#xA; ,@p_Statut&#xA; ,@p_Description&#xA; ,@p_IdImport&#xA; ,@p_DateModificationImport&#xA; ,@p_DateCreationImport&#xA;GO&#xA;"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::Var_Int_IdImport" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::Var_String_BackupDirectory"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::Var_String_BackupFullPath"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::Var_String_BackupName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\SQL Task 004 || Log Traitement KO"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{9D3320DF-6B5A-40D4-BB3C-C2EFFB626FAE}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL Task 004 || Log Traitement KO"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{9619F57D-71EE-438A-94C1-6EFBC6598F31}"
+              SQLTask:SqlStatementSource="EXEC [audit].[PS_LogStatutTraitement] ?,'KO',NULL,?&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::Var_Int_TraitementID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="255" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::Var_Int_IdImport"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="255" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\SQL Task 004 || Log Traitement OK"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{208EC3DE-615E-46BD-9B8C-6847757477CB}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL Task 004 || Log Traitement OK"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{9619F57D-71EE-438A-94C1-6EFBC6598F31}"
+              SQLTask:SqlStatementSource="EXEC [audit].[PS_LogStatutTraitement] ?,'OK',NULL,?&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::Var_Int_TraitementID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="255" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::Var_Int_IdImport"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="255" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{43E35D9E-D55C-4F01-A3B0-85855CF3592F}"
+          DTS:From="Package\Foreach Loop Container\SQL Task 001 || Log Debut Import"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Foreach Loop Container\Sequence Container 1" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{44C57B43-A858-4EFF-8A1C-F906B4924765}"
+          DTS:From="Package\Foreach Loop Container\Sequence Container 1"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Foreach Loop Container\DELETE FROM MORGON" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{CDED20E4-396B-4D55-815C-C92F48EFBC25}"
+          DTS:From="Package\Foreach Loop Container\Sequence Container 1"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Foreach Loop Container\MOVE TO ANOMALIE"
+          DTS:Value="1" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{A6D356CA-52A3-47B2-8C02-798CB3BEE47F}"
+          DTS:From="Package\Foreach Loop Container\Sequence Container 1"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Foreach Loop Container\MOVE TO ARCHIVE" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{3AA284A6-8D19-4486-8DF6-75E01F6A5A95}"
+          DTS:From="Package\Foreach Loop Container\DELETE FROM MORGON"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Foreach Loop Container\SQL Task 004 || Log Traitement OK" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{363501D2-F1C2-4636-9B68-A0E573C49C2A}"
+          DTS:From="Package\Foreach Loop Container\MOVE TO ANOMALIE"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\Foreach Loop Container\SQL Task 004 || Log Traitement KO" />
+      </DTS:PrecedenceConstraints>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{549ABD27-0E3D-497E-9B8B-0A6598D95EDC}"
+          DTS:ObjectName="{549ABD27-0E3D-497E-9B8B-0A6598D95EDC}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::Var_String_BackupName" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{4E7BC5AB-4754-4E07-88F0-212BD0C53615}"
+          DTS:ObjectName="{4E7BC5AB-4754-4E07-88F0-212BD0C53615}"
+          DTS:ValueIndex="1"
+          DTS:VariableName="User::Var_String_DestSchema" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{56B0A23C-9541-48BC-A90E-6CDB1FCFAAAA}"
+          DTS:ObjectName="{56B0A23C-9541-48BC-A90E-6CDB1FCFAAAA}"
+          DTS:ValueIndex="2"
+          DTS:VariableName="User::Var_String_BackupDirectory" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{9DF0F788-EAF9-44F1-BA1A-BCD1A1D89599}"
+          DTS:ObjectName="{9DF0F788-EAF9-44F1-BA1A-BCD1A1D89599}"
+          DTS:ValueIndex="3"
+          DTS:VariableName="User::Var_String_BackupPath" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{BD4C662E-9147-45C1-8417-5750806A9D4A}"
+          DTS:ObjectName="{BD4C662E-9147-45C1-8417-5750806A9D4A}"
+          DTS:ValueIndex="4"
+          DTS:VariableName="User::Var_date_DateDeCloture" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Task 001 || Log Debut Traitement"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{60536695-225D-48D6-979C-5AC68BFA8652}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Task 001 || Log Debut Traitement"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9619F57D-71EE-438A-94C1-6EFBC6598F31}"
+          SQLTask:SqlStatementSource="EXEC [audit].[PS_LogTraitement] ?,NULL,NULL"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::Var_Int_TraitementID" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="System::PackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="255" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Task 002 || Ordonancement Import Fichier"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{6BCE5D6A-D03C-435E-ABD2-03BF597941A1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Task 002 || Ordonancement Import Fichier"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9619F57D-71EE-438A-94C1-6EFBC6598F31}"
+          SQLTask:SqlStatementSource="EXEC [audit].[PS_Ordonnancement] "
+          SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::Obj_DBSourceNames" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{7A7FEB99-927C-4140-88D0-814CF69F6BB7}"
+      DTS:From="Package\SQL Task 001 || Log Debut Traitement"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\SQL Task 002 || Ordonancement Import Fichier" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{7D8F1C21-AB5D-41E6-99DA-B25090D12CBD}"
+      DTS:From="Package\SQL Task 002 || Ordonancement Import Fichier"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Foreach Loop Container" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="195,42"
+          Id="Package\Foreach Loop Container\DELETE FROM MORGON"
+          TopLeft="32.0000000000001,619.5" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Foreach Loop Container\MOVE TO ANOMALIE"
+          TopLeft="288,619.5" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Foreach Loop Container\MOVE TO ARCHIVE"
+          TopLeft="528,619.5" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Foreach Loop Container\Sequence Container 1\2 - RESTORE BACKUP"
+          TopLeft="60,107.5" />
+        <NodeLayout
+          Size="235,42"
+          Id="Package\Foreach Loop Container\Sequence Container 1\3 - SOURCE TO DATAANALYTICS"
+          TopLeft="33.5,209.5" />
+        <NodeLayout
+          Size="187,42"
+          Id="Package\Foreach Loop Container\Sequence Container 1\COPY_TO_MORGON_R"
+          TopLeft="57.5,8.5" />
+        <NodeLayout
+          Size="291,42"
+          Id="Package\Foreach Loop Container\Sequence Container 1\SQL Task 002 || DROP DATA BASE  IF EXIST"
+          TopLeft="5.50000000000006,311.5" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Sequence Container 1.PrecedenceConstraints[Constraint]"
+          TopLeft="151,50.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57"
+              Start="0,0"
+              End="0,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Sequence Container 1.PrecedenceConstraints[Constraint 1]"
+          TopLeft="151,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Sequence Container 1.PrecedenceConstraints[Constraint 2]"
+          TopLeft="151,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="302,409"
+          Size="302,452"
+          Id="Package\Foreach Loop Container\Sequence Container 1"
+          TopLeft="226.5,107.5" />
+        <NodeLayout
+          Size="243,42"
+          Id="Package\Foreach Loop Container\SQL Task 001 || Log Debut Import"
+          TopLeft="256,6.5" />
+        <NodeLayout
+          Size="248,42"
+          Id="Package\Foreach Loop Container\SQL Task 004 || Log Traitement KO"
+          TopLeft="258.5,721.5" />
+        <NodeLayout
+          Size="248,42"
+          Id="Package\Foreach Loop Container\SQL Task 004 || Log Traitement OK"
+          TopLeft="5.50000000000006,721.5" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint]"
+          TopLeft="377.5,48.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59"
+              Start="0,0"
+              End="0,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="304,559.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-174.5,60"
+              Start="0,0"
+              End="-174.5,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.3501094091904" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.3501094091904"
+                    Point2="0,20.3501094091904"
+                    Point3="-4,20.3501094091904" />
+                  <mssgle:LineSegment
+                    End="-170.5,20.3501094091904" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-170.5,20.3501094091904"
+                    Point2="-174.5,20.3501094091904"
+                    Point3="-174.5,24.3501094091904" />
+                  <mssgle:LineSegment
+                    End="-174.5,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 2]"
+          TopLeft="377.5,559.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-15.24134765625,21.37548828125,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 3]"
+          TopLeft="451,559.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="162.5,60"
+              Start="0,0"
+              End="162.5,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.3501094091904" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.3501094091904"
+                    Point2="0,20.3501094091904"
+                    Point3="4,20.3501094091904" />
+                  <mssgle:LineSegment
+                    End="158.5,20.3501094091904" />
+                  <mssgle:CubicBezierSegment
+                    Point1="158.5,20.3501094091904"
+                    Point2="162.5,20.3501094091904"
+                    Point3="162.5,24.3501094091904" />
+                  <mssgle:LineSegment
+                    End="162.5,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 4]"
+          TopLeft="129.5,661.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 5]"
+          TopLeft="380,661.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="704,819"
+          Size="704,862"
+          Id="Package\Foreach Loop Container"
+          TopLeft="5.50000000000011,208.5" />
+        <NodeLayout
+          Size="262,42"
+          Id="Package\SQL Task 001 || Log Debut Traitement"
+          TopLeft="226.5,5.5" />
+        <NodeLayout
+          Size="303.5,42"
+          Id="Package\SQL Task 002 || Ordonancement Import Fichier"
+          TopLeft="206,107.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="357.625,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="357.625,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59"
+              Start="0,0"
+              End="0,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

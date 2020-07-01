@@ -1,0 +1,18 @@
+
+--Change collation to something case sensative
+CREATE DATABASE [ZEUS] COLLATE SQL_Latin1_General_CP1_CS_AS   
+GO
+
+-- CREATE Schema
+CREATE SCHEMA Stg
+GO 
+CREATE SCHEMA Ods
+GO 
+CREATE SCHEMA dim
+GO 
+CREATE SCHEMA Fact
+GO 
+CREATE SCHEMA audit
+GO 
+CREATE SCHEMA log
+GO
