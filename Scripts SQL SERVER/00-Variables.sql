@@ -1,5 +1,5 @@
 ﻿--:setvar v_Environnement "REC"
-:setvar v_BaseDeDonnees "etools"
+--:setvar v_BaseDeDonnees "etools"
 --:setvar v_Job_COLLECTE "ROSTAM_COLLECTE"
 --:setvar v_JobConfCategoryName "ROSTAM"
 --:setvar v_JobConfOwnerLoginName "sa"
