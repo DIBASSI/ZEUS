@@ -1,0 +1,8 @@
+[0706/115156.574:ERROR:file_io_win.cc(179)] CreateFile C:\Users\mdibassi\AppData\Local\Power BI Desktop\User Data\Crashpad\settings.dat: Le processus ne peut pas accéder au fichier car ce fichier est utilisé par un autre processus. (0x20)
+[0706/115156.669:ERROR:registration_protocol_win.cc(84)] TransactNamedPipe: Le canal de communication a été fermé. (0x6D)
+[0706/115156.671:ERROR:file_io_win.cc(179)] CreateFile C:\Users\mdibassi\AppData\Local\Power BI Desktop\User Data\Crashpad\settings.dat: Le processus ne peut pas accéder au fichier car ce fichier est utilisé par un autre processus. (0x20)
+[0706/115158.395:ERROR:registration_protocol_win.cc(56)] CreateFile: Le fichier spécifié est introuvable. (0x2)
+[0706/115202.664:ERROR:registration_protocol_win.cc(56)] CreateFile: Le fichier spécifié est introuvable. (0x2)
+[0706/115203.027:ERROR:registration_protocol_win.cc(56)] CreateFile: Le fichier spécifié est introuvable. (0x2)
+[0706/115203.233:ERROR:registration_protocol_win.cc(56)] CreateFile: Le fichier spécifié est introuvable. (0x2)
+[0706/115213.389:ERROR:registration_protocol_win.cc(56)] CreateFile: Le fichier spécifié est introuvable. (0x2)
