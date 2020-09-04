@@ -1,61 +1,61 @@
-﻿USE [ZEUS]
-GO
+﻿--USE [ZEUS]
+--GO
 
--------------------------------------------------------------------------------
-PRINT 'Debut DATA'
-GO
--------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+--PRINT 'Debut DATA'
+--GO
+---------------------------------------------------------------------------------
 
 
-BEGIN TRY
-	DROP TABLE [dwh].[DimDate]
-END TRY
+--BEGIN TRY
+--	DROP TABLE [dbo].[DimDate]
+--END TRY
 
-BEGIN CATCH
-	/*No Action*/
-END CATCH
+--BEGIN CATCH
+--	/*No Action*/
+--END CATCH
 
 /**********************************************************************************/
 
---CREATE TABLE	[dwh].[DimDate]
---	(	[DateKey] INT primary key, 
---		[Date] DATETIME,
---		[FullDateUK] CHAR(10), -- Date in dd-MM-yyyy format
---		[FullDateUSA] CHAR(10),-- Date in MM-dd-yyyy format
---		[DayOfMonth] VARCHAR(2), -- Field will hold day number of Month
---		[DaySuffix] VARCHAR(4), -- Apply suffix as 1st, 2nd ,3rd etc
---		[DayName] VARCHAR(9), -- Contains name of the day, Sunday, Monday 
---		[DayOfWeekUSA] CHAR(1),-- First Day Sunday=1 and Saturday=7
---		[DayOfWeekUK] CHAR(1),-- First Day Monday=1 and Sunday=7
---		[DayOfWeekInMonth] VARCHAR(2), --1st Monday or 2nd Monday in Month
---		[DayOfWeekInYear] VARCHAR(2),
---		[DayOfQuarter] VARCHAR(3),
---		[DayOfYear] VARCHAR(3),
---		[WeekOfMonth] VARCHAR(1),-- Week Number of Month 
---		[WeekOfQuarter] VARCHAR(2), --Week Number of the Quarter
---		[WeekOfYear] VARCHAR(2),--Week Number of the Year
---		[Month] VARCHAR(2), --Number of the Month 1 to 12
---		[MonthName] VARCHAR(9),--January, February etc
---		[MonthOfQuarter] VARCHAR(2),-- Month Number belongs to Quarter
---		[Quarter] CHAR(1),
---		[QuarterName] VARCHAR(9),--First,Second..
---		[Year] CHAR(4),-- Year value of Date stored in Row
---		[YearName] CHAR(7), --CY 2012,CY 2013
---		[MonthYear] CHAR(10), --Jan-2013,Feb-2013
---		[MMYYYY] CHAR(6),
---		[FirstDayOfMonth] DATE,
---		[LastDayOfMonth] DATE,
---		[FirstDayOfQuarter] DATE,
---		[LastDayOfQuarter] DATE,
---		[FirstDayOfYear] DATE,
---		[LastDayOfYear] DATE,
---		[IsHolidayUSA] BIT,-- Flag 1=National Holiday, 0-No National Holiday
---		[IsWeekday] BIT,-- 0=Week End ,1=Week Day
---		[HolidayUSA] VARCHAR(50),--Name of Holiday in US
---		[IsHolidayUK] BIT Null,-- Flag 1=National Holiday, 0-No National Holiday
---		[HolidayUK] VARCHAR(50) Null --Name of Holiday in UK
---	)
---GO
+CREATE TABLE	[dbo].[DimDate]
+	(	[DateKey] INT primary key, 
+		[Date] DATETIME,
+		[FullDateUK] CHAR(10), -- Date in dd-MM-yyyy format
+		[FullDateUSA] CHAR(10),-- Date in MM-dd-yyyy format
+		[DayOfMonth] VARCHAR(2), -- Field will hold day number of Month
+		[DaySuffix] VARCHAR(4), -- Apply suffix as 1st, 2nd ,3rd etc
+		[DayName] VARCHAR(9), -- Contains name of the day, Sunday, Monday 
+		[DayOfWeekUSA] CHAR(1),-- First Day Sunday=1 and Saturday=7
+		[DayOfWeekUK] CHAR(1),-- First Day Monday=1 and Sunday=7
+		[DayOfWeekInMonth] VARCHAR(2), --1st Monday or 2nd Monday in Month
+		[DayOfWeekInYear] VARCHAR(2),
+		[DayOfQuarter] VARCHAR(3),
+		[DayOfYear] VARCHAR(3),
+		[WeekOfMonth] VARCHAR(1),-- Week Number of Month 
+		[WeekOfQuarter] VARCHAR(2), --Week Number of the Quarter
+		[WeekOfYear] VARCHAR(2),--Week Number of the Year
+		[Month] VARCHAR(2), --Number of the Month 1 to 12
+		[MonthName] VARCHAR(9),--January, February etc
+		[MonthOfQuarter] VARCHAR(2),-- Month Number belongs to Quarter
+		[Quarter] CHAR(1),
+		[QuarterName] VARCHAR(9),--First,Second..
+		[Year] CHAR(4),-- Year value of Date stored in Row
+		[YearName] CHAR(7), --CY 2012,CY 2013
+		[MonthYear] CHAR(10), --Jan-2013,Feb-2013
+		[MMYYYY] CHAR(6),
+		[FirstDayOfMonth] DATE,
+		[LastDayOfMonth] DATE,
+		[FirstDayOfQuarter] DATE,
+		[LastDayOfQuarter] DATE,
+		[FirstDayOfYear] DATE,
+		[LastDayOfYear] DATE,
+		[IsHolidayUSA] BIT,-- Flag 1=National Holiday, 0-No National Holiday
+		[IsWeekday] BIT,-- 0=Week End ,1=Week Day
+		[HolidayUSA] VARCHAR(50),--Name of Holiday in US
+		[IsHolidayUK] BIT Null,-- Flag 1=National Holiday, 0-No National Holiday
+		[HolidayUK] VARCHAR(50) Null --Name of Holiday in UK
+	)
+GO
 
 /********************************************************************************************/
 --Specify Start Date and End date here
@@ -151,7 +151,7 @@ BEGIN
 
 /* Populate Your Dimension Table with values*/
 	
-	INSERT INTO [dwh].[DimDate]
+	INSERT INTO [dbo].[DimDate]
 	(	[DateKey], 
 		[Date] ,
 		[FullDateUK], -- Date in dd-MM-yyyy format
@@ -288,48 +288,48 @@ END
 /*Update HOLIDAY fields of UK as per Govt. Declaration of National Holiday*/
 	
 -- Good Friday  April 18 
-	UPDATE [dwh].[DimDate]
+	UPDATE [dbo].[DimDate]
 		SET HolidayUK = 'Good Friday'
 	WHERE [Month] = 4 AND [DayOfMonth]  = 18
 
 -- Easter Monday  April 21 
-	UPDATE [dwh].[DimDate]
+	UPDATE [dbo].[DimDate]
 		SET HolidayUK = 'Easter Monday'
 	WHERE [Month] = 4 AND [DayOfMonth]  = 21
 
 -- Early May Bank Holiday   May 5 
-   UPDATE [dwh].[DimDate]
+   UPDATE [dbo].[DimDate]
 		SET HolidayUK = 'Early May Bank Holiday'
 	WHERE [Month] = 5 AND [DayOfMonth]  = 5
 
 -- Spring Bank Holiday  May 26 
-	UPDATE [dwh].[DimDate]
+	UPDATE [dbo].[DimDate]
 		SET HolidayUK = 'Spring Bank Holiday'
 	WHERE [Month] = 5 AND [DayOfMonth]  = 26
 
 -- Summer Bank Holiday  August 25 
-    UPDATE [dwh].[DimDate]
+    UPDATE [dbo].[DimDate]
 		SET HolidayUK = 'Summer Bank Holiday'
 	WHERE [Month] = 8 AND [DayOfMonth]  = 25
 
 -- Boxing Day  December 26  	
-    UPDATE [dwh].[DimDate]
+    UPDATE [dbo].[DimDate]
 		SET HolidayUK = 'Boxing Day'
 	WHERE [Month] = 12 AND [DayOfMonth]  = 26	
 
 --CHRISTMAS
-	UPDATE [dwh].[DimDate]
+	UPDATE [dbo].[DimDate]
 		SET HolidayUK = 'Christmas Day'
 	WHERE [Month] = 12 AND [DayOfMonth]  = 25
 
 --New Years Day
-	UPDATE [dwh].[DimDate]
+	UPDATE [dbo].[DimDate]
 		SET HolidayUK  = 'New Year''s Day'
 	WHERE [Month] = 1 AND [DayOfMonth] = 1
 
 --Update flag for UK Holidays 1= Holiday, 0=No Holiday
 	
-	UPDATE [dwh].[DimDate]
+	UPDATE [dbo].[DimDate]
 		SET IsHolidayUK  = CASE WHEN HolidayUK   IS NULL
 		THEN 0 WHEN HolidayUK   IS NOT NULL THEN 1 END
 		
@@ -340,7 +340,7 @@ END
 /*Update HOLIDAY Field of USA In dimension*/
 	
  	/*THANKSGIVING - Fourth THURSDAY in November*/
-	UPDATE [dwh].[DimDate]
+	UPDATE [dbo].[DimDate]
 		SET HolidayUSA = 'Thanksgiving Day'
 	WHERE
 		[Month] = 11 
@@ -348,30 +348,30 @@ END
 		AND DayOfWeekInMonth = 4
 
 	/*CHRISTMAS*/
-	UPDATE [dwh].[DimDate]
+	UPDATE [dbo].[DimDate]
 		SET HolidayUSA = 'Christmas Day'
 		
 	WHERE [Month] = 12 AND [DayOfMonth]  = 25
 
 	/*4th of July*/
-	UPDATE [dwh].[DimDate]
+	UPDATE [dbo].[DimDate]
 		SET HolidayUSA = 'Independance Day'
 	WHERE [Month] = 7 AND [DayOfMonth] = 4
 
 	/*New Years Day*/
-	UPDATE [dwh].[DimDate]
+	UPDATE [dbo].[DimDate]
 		SET HolidayUSA = 'New Year''s Day'
 	WHERE [Month] = 1 AND [DayOfMonth] = 1
 
 	/*Memorial Day - Last Monday in May*/
-	UPDATE [dwh].[DimDate]
+	UPDATE [dbo].[DimDate]
 		SET HolidayUSA = 'Memorial Day'
-	FROM [dwh].[DimDate]
+	FROM [dbo].[DimDate]
 	WHERE DateKey IN 
 		(
 		SELECT
 			MAX(DateKey)
-		FROM [dwh].[DimDate]
+		FROM [dbo].[DimDate]
 		WHERE
 			[MonthName] = 'May'
 			AND [DayOfWeekUSA]  = 'Monday'
@@ -381,14 +381,14 @@ END
 		)
 
 	/*Labor Day - First Monday in September*/
-	UPDATE [dwh].[DimDate]
+	UPDATE [dbo].[DimDate]
 		SET HolidayUSA = 'Labor Day'
-	FROM [dwh].[DimDate]
+	FROM [dbo].[DimDate]
 	WHERE DateKey IN 
 		(
 		SELECT
 			MIN(DateKey)
-		FROM [dwh].[DimDate]
+		FROM [dbo].[DimDate]
 		WHERE
 			[MonthName] = 'September'
 			AND [DayOfWeekUSA] = 'Monday'
@@ -398,21 +398,21 @@ END
 		)
 
 	/*Valentine's Day*/
-	UPDATE [dwh].[DimDate]
+	UPDATE [dbo].[DimDate]
 		SET HolidayUSA = 'Valentine''s Day'
 	WHERE
 		[Month] = 2 
 		AND [DayOfMonth] = 14
 
 	/*Saint Patrick's Day*/
-	UPDATE [dwh].[DimDate]
+	UPDATE [dbo].[DimDate]
 		SET HolidayUSA = 'Saint Patrick''s Day'
 	WHERE
 		[Month] = 3
 		AND [DayOfMonth] = 17
 
 	/*Martin Luthor King Day - Third Monday in January starting in 1983*/
-	UPDATE [dwh].[DimDate]
+	UPDATE [dbo].[DimDate]
 		SET HolidayUSA = 'Martin Luthor King Jr Day'
 	WHERE
 		[Month] = 1
@@ -421,7 +421,7 @@ END
 		AND DayOfWeekInMonth = 3
 
 	/*President's Day - Third Monday in February*/
-	UPDATE [dwh].[DimDate]
+	UPDATE [dbo].[DimDate]
 		SET HolidayUSA = 'President''s Day'
 	WHERE
 		[Month] = 2
@@ -429,7 +429,7 @@ END
 		AND DayOfWeekInMonth = 3
 
 	/*Mother's Day - Second Sunday of May*/
-	UPDATE [dwh].[DimDate]
+	UPDATE [dbo].[DimDate]
 		SET HolidayUSA = 'Mother''s Day'
 	WHERE
 		[Month] = 5
@@ -437,7 +437,7 @@ END
 		AND DayOfWeekInMonth = 2
 
 	/*Father's Day - Third Sunday of June*/
-	UPDATE [dwh].[DimDate]
+	UPDATE [dbo].[DimDate]
 		SET HolidayUSA = 'Father''s Day'
 	WHERE
 		[Month] = 6
@@ -445,7 +445,7 @@ END
 		AND DayOfWeekInMonth = 3
 
 	/*Halloween 10/31*/
-	UPDATE [dwh].[DimDate]
+	UPDATE [dbo].[DimDate]
 		SET HolidayUSA = 'Halloween'
 	WHERE
 		[Month] = 10
@@ -461,7 +461,7 @@ END
 			DateKey,
 			[Year],
 			[DayOfMonth] 
-		FROM [dwh].[DimDate]
+		FROM [dbo].[DimDate]
 		WHERE
 			[Month] = 11
 			AND [DayOfWeekUSA] = 'Monday'
@@ -505,15 +505,15 @@ END
 			SELECT @CURRENTYEAR = @CURRENTYEAR + 1
 		END
 
-		UPDATE [dwh].[DimDate]
+		UPDATE [dbo].[DimDate]
 			SET HolidayUSA  = 'Election Day'				
-		FROM [dwh].[DimDate] DT
+		FROM [dbo].[DimDate] DT
 			JOIN @Holidays HL ON (HL.DateID + 1) = DT.DateKey
 		WHERE
 			[Week] = 1
 	END
 	--set flag for USA holidays in Dimension
-	UPDATE [dwh].[DimDate]
+	UPDATE [dbo].[DimDate]
 SET IsHolidayUSA = CASE WHEN HolidayUSA  IS NULL THEN 0 WHEN HolidayUSA  IS NOT NULL THEN 1 END
 GO
 /*****************************************************************************************/
@@ -522,23 +522,23 @@ GO
 
 --/*Add Fiscal Calendar columns into table DimDate*/
 
---ALTER TABLE [dwh].[DimDate] ADD
---	[FiscalDayOfYear] VARCHAR(3),
---	[FiscalWeekOfYear] VARCHAR(3),
---	[FiscalMonth] VARCHAR(2), 
---	[FiscalQuarter] CHAR(1),
---	[FiscalQuarterName] VARCHAR(9),
---	[FiscalYear] CHAR(4),
---	[FiscalYearName] CHAR(7),
---	[FiscalMonthYear] CHAR(10),
---	[FiscalMMYYYY] CHAR(6),
---	[FiscalFirstDayOfMonth] DATE,
---	[FiscalLastDayOfMonth] DATE,
---	[FiscalFirstDayOfQuarter] DATE,
---	[FiscalLastDayOfQuarter] DATE,
---	[FiscalFirstDayOfYear] DATE,
---	[FiscalLastDayOfYear] DATE
---	GO
+ALTER TABLE [dbo].[DimDate] ADD
+	[FiscalDayOfYear] VARCHAR(3),
+	[FiscalWeekOfYear] VARCHAR(3),
+	[FiscalMonth] VARCHAR(2), 
+	[FiscalQuarter] CHAR(1),
+	[FiscalQuarterName] VARCHAR(9),
+	[FiscalYear] CHAR(4),
+	[FiscalYearName] CHAR(7),
+	[FiscalMonthYear] CHAR(10),
+	[FiscalMMYYYY] CHAR(6),
+	[FiscalFirstDayOfMonth] DATE,
+	[FiscalLastDayOfMonth] DATE,
+	[FiscalFirstDayOfQuarter] DATE,
+	[FiscalLastDayOfQuarter] DATE,
+	[FiscalFirstDayOfYear] DATE,
+	[FiscalLastDayOfYear] DATE
+	GO
 
 	/***************************************************************************
 The following section needs to be populated for defining the fiscal calendar
@@ -649,7 +649,7 @@ BEGIN
 		
 /*Use this section for a 4-4-5 calendar.  
 Every leap year the result will be a 4-5-5*/
-		/*
+		--/*
 		WHEN @FiscalWeekOfYear BETWEEN 1 AND 4 THEN 1 /*4 weeks*/
 		WHEN @FiscalWeekOfYear BETWEEN 5 AND 8 THEN 2 /*4 weeks*/
 		WHEN @FiscalWeekOfYear BETWEEN 9 AND 13 THEN 3 /*5 weeks*/
@@ -663,7 +663,7 @@ Every leap year the result will be a 4-5-5*/
 		WHEN @FiscalWeekOfYear BETWEEN 44 AND
 		(47+@leapWeek) THEN 11 /*4 weeks (5 weeks on leap year)*/
 WHEN @FiscalWeekOfYear BETWEEN (48+@leapWeek) AND (52+@leapWeek) THEN 12 /*5 weeks*/
-		*/
+		--*/
 	END
 
 	/*SET Fiscal Quarter*/
@@ -792,7 +792,7 @@ SET
 
 /********************************************************************************************/
 
-UPDATE [dwh].[DimDate]
+UPDATE [dbo].[DimDate]
 	SET
 	FiscalDayOfYear = a.FiscalDayOfYear
 	, FiscalWeekOfYear = a.FiscalWeekOfYear
@@ -810,7 +810,7 @@ UPDATE [dwh].[DimDate]
 	, FiscalFirstDayOfYear = a.FiscalFirstDayOfYear
 	, FiscalLastDayOfYear = a.FiscalLastDayOfYear
 FROM @tb a
-	INNER JOIN [dwh].[DimDate] b ON a.PeriodDate = b.[Date]
+	INNER JOIN [dbo].[DimDate] b ON a.PeriodDate = b.[Date]
 
 /********************************************************************************************/
 
