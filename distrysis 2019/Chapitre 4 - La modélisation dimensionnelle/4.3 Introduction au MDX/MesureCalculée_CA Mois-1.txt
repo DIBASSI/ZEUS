@@ -1,0 +1,17 @@
+-- Script de la mesure calculée [CA Mois-1]
+
+Case
+
+When [Temps].[Année - Mois - Jour].CurrentMember.Level Is
+ [Temps].[Année - Mois - Jour].[Mois]
+Then 
+(
+[Measures].[CA],
+ParallelPeriod(
+	[Temps].[Année - Mois - Jour].[Mois],
+	1,
+	[Temps].[Année - Mois - Jour].CurrentMember
+	)
+)
+Else Null
+End

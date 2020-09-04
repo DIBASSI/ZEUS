@@ -1,0 +1,44 @@
+1;Entree;10;Reception Fournisseur;Manuel;Avec Controle Qualite
+2;Sortie;20;Livraison Client;Manuel;Avec Controle Qualite
+3;Entree;30;Correction + sur inventaire;Manuel;Avec Controle Qualite
+4;Sortie;40;Correstion - sur inventaire;Manuel;Avec Controle Qualite
+5;Entree;50;Retour Client;Manuel;Avec Controle Qualite
+6;Sortie;60;Retour Fournisseur;Manuel;Avec Controle Qualite
+7;Entree;70;Entree divers;Manuel;Avec Controle Qualite
+8;Sortie;80;Sortie divers;Manuel;Avec Controle Qualite
+9;Sortie;90;Non Qualite;Manuel;Avec Controle Qualite
+10;Entree;100;Entree sur transfert;Manuel;Avec Controle Qualite
+11;Sortie;110;Sortie sur transfert;Manuel;Avec Controle Qualite
+12;Entree;10;Reception Fournisseur;Automatique;Avec Controle Qualite
+13;Sortie;20;Livraison Client;Automatique;Avec Controle Qualite
+14;Entree;30;Correction + sur inventaire;Automatique;Avec Controle Qualite
+15;Sortie;40;Correstion - sur inventaire;Automatique;Avec Controle Qualite
+16;Entree;50;Retour Client;Automatique;Avec Controle Qualite
+17;Sortie;60;Retour Fournisseur;Automatique;Avec Controle Qualite
+18;Entree;70;Entree divers;Automatique;Avec Controle Qualite
+19;Sortie;80;Sortie divers;Automatique;Avec Controle Qualite
+20;Sortie;90;Non Qualite;Automatique;Avec Controle Qualite
+21;Entree;100;Entree sur transfert;Automatique;Avec Controle Qualite
+22;Sortie;110;Sortie sur transfert;Automatique;Avec Controle Qualite
+23;Entree;10;Reception Fournisseur;Manuel;Sans Controle Qualite
+24;Sortie;20;Livraison Client;Manuel;Sans Controle Qualite
+25;Entree;30;Correction + sur inventaire;Manuel;Sans Controle Qualite
+26;Sortie;40;Correstion - sur inventaire;Manuel;Sans Controle Qualite
+27;Entree;50;Retour Client;Manuel;Sans Controle Qualite
+28;Sortie;60;Retour Fournisseur;Manuel;Sans Controle Qualite
+29;Entree;70;Entree divers;Manuel;Sans Controle Qualite
+30;Sortie;80;Sortie divers;Manuel;Sans Controle Qualite
+31;Sortie;90;Non Qualite;Manuel;Sans Controle Qualite
+32;Entree;100;Entree sur transfert;Manuel;Sans Controle Qualite
+33;Sortie;110;Sortie sur transfert;Manuel;Sans Controle Qualite
+34;Entree;10;Reception Fournisseur;Automatique;Sans Controle Qualite
+35;Sortie;20;Livraison Client;Automatique;Sans Controle Qualite
+36;Entree;30;Correction + sur inventaire;Automatique;Sans Controle Qualite
+37;Sortie;40;Correstion - sur inventaire;Automatique;Sans Controle Qualite
+38;Entree;50;Retour Client;Automatique;Sans Controle Qualite
+39;Sortie;60;Retour Fournisseur;Automatique;Sans Controle Qualite
+40;Entree;70;Entree divers;Automatique;Sans Controle Qualite
+41;Sortie;80;Sortie divers;Automatique;Sans Controle Qualite
+42;Sortie;90;Non Qualite;Automatique;Sans Controle Qualite
+43;Entree;100;Entree sur transfert;Automatique;Sans Controle Qualite
+44;Sortie;110;Sortie sur transfert;Automatique;Sans Controle Qualite

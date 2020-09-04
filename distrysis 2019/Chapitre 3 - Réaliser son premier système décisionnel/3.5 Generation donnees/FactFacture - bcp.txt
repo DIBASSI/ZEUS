@@ -1,0 +1,4 @@
+
+bcp DistrisysDW.dbo.FactFacture out "FactFacture.csv" -T -c -t";" -S"Serveur1"
+bcp DistrisysDW.dbo.FactFacture in "FactFacture.csv" -T -c -t";" -S"Serveur1"
+

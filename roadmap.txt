@@ -1,0 +1,17 @@
+Sélection et installation des produits
+
+	Le choix des licences
+
+		•	SQL Server 2019 édition Enterprise
+		•	d’Office 2019 / Office 365
+		•	Power BI
+
+	Architecture serveur
+	
+		•	Un environnement de développement : 
+		
+		•	Un environnement de recette ou pré-production
+		
+		•	Un environnement d’intégration : laboratoire sur lequel l’équipe exploitation peut tester, s’entraîner et préparer les travaux de maintenance ou de mises à jour applicatives.
+
+		•	Un environnement de production : c’est l’environnement de travail des utilisateurs. De fait, cet environnement doit avoir le moins possible d’interruptions de services tout en offrant avec constance les meilleures performances.

@@ -1,0 +1,12 @@
+-- Script de la mesure calculée [% Evol CA Cumul Année-1]
+
+Case
+
+When [Temps].[Année - Mois - Jour].CurrentMember.Level Is
+ [Temps].[Année - Mois - Jour].[Mois]
+	And [Measures].[CA Cumul Année-1] <> 0
+
+Then [Measures].[CA Cumul]/[Measures].[CA Cumul Année-1]-1
+Else Null
+
+End

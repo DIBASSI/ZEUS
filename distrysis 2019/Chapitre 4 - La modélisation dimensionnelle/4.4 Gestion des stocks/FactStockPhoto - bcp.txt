@@ -1,0 +1,5 @@
+
+bcp DistrisysDW.dbo.FactStockPhoto out "FactStockPhoto.csv" -T -c -t";" -S"Serveur1"
+bcp DistrisysDW.dbo.FactStockPhoto in "FactStockPhoto.csv" -T -c -t";" -S"Serveur1"
+
+

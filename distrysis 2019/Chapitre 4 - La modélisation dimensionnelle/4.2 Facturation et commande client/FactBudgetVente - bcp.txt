@@ -1,0 +1,5 @@
+
+bcp DistrisysDW.dbo.FactBudgetVente out "FactBudgetVente.csv" -T -c -t";" -S"Serveur1"
+bcp DistrisysDW.dbo.FactBudgetVente in "FactBudgetVente.csv" -T -c -t";" -S"Serveur1"
+
+

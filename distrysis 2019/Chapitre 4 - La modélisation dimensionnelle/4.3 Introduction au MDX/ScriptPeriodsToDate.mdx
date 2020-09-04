@@ -1,0 +1,30 @@
+WITH
+MEMBER [CA Cumul] AS
+Sum
+(
+  PeriodsToDate
+  (
+     [Temps].[Année - Mois - Jour].[Annee],
+	 [Temps].[Année - Mois - Jour].CurrentMember
+  ),
+  [Measures].[CA]
+
+),FORMAT_STRING="Currency"
+
+MEMBER [CA Cumul Année-1] AS
+SUM
+(
+  PeriodsToDate
+  (
+     [Temps].[Année - Mois - Jour].[Annee],
+	 [Temps].[Année - Mois - Jour].CurrentMember
+  ),
+  [Measures].[CA Mois Année-1]
+),FORMAT_STRING="Currency"
+
+SELECT
+{[Measures].[CA], [CA Cumul], [CA Cumul Année-1]}
+ ON 0,
+[Temps].[Année - Mois - Jour].[Annee].&[20130101].children
+ON 1
+FROM [Distrisys]

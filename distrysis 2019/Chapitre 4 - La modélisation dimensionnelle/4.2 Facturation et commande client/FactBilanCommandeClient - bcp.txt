@@ -1,0 +1,5 @@
+
+bcp DistrisysDW.dbo.FactBilanCommandeClient out "FactBilanCommandeClient.csv" -T -c -t";" -S"Serveur1"
+bcp DistrisysDW.dbo.FactBilanCommandeClient in "FactBilanCommandeClient.csv" -T -c -t";" -S"Serveur1"
+
+

@@ -1,0 +1,7 @@
+=IIF(Fields!FluxTermineAvecSucces.Value="N"
+	,"Red"
+	,IIF(Fields!FluxAreprendre.Value="O"
+		,"Tomato"
+		,"Transparent"
+	)
+)

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="MasterData"
+  DTS:DTSID="{66D43DA8-F1C1-421B-93E4-CB13A5AFD744}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=serveur1;Initial Catalog=MasterData;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SA_Produit-{66D43DA8-F1C1-421B-93E4-CB13A5AFD744}server1\r2.DistrisysERP_SiegeSocial;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

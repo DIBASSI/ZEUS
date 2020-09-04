@@ -1,0 +1,3 @@
+
+bcp DistrisysDW.dbo.DimTemps Out "DimTemps.csv" -T -c -t";" -S"SERVEUR1" -R -C 1252
+bcp DistrisysDW.dbo.DimTemps in "DimTemps.csv" -T -c -t";" -S"SERVEUR1" -R -C 1252

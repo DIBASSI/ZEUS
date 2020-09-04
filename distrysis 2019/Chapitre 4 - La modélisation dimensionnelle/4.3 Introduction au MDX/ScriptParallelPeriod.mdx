@@ -1,0 +1,24 @@
+WITH
+MEMBER [CA Mois-1] AS
+(
+[Measures].[CA],
+ParallelPeriod(
+	[Temps].[Année - Mois - Jour].[Mois],
+	1,
+	[Temps].[Année - Mois - Jour].CurrentMember
+	)
+),FORMAT_STRING="Currency"
+MEMBER [CA Mois Année-1] AS
+(
+[Measures].[CA],
+ParallelPeriod(
+	[Temps].[Année - Mois - Jour].[Annee],
+	1,
+	[Temps].[Année - Mois - Jour].CurrentMember
+	)
+),FORMAT_STRING="Currency"
+SELECT
+{[Measures].[CA], [CA Mois-1], [CA Mois Année-1]} ON 0,
+[Temps].[Année - Mois - Jour].[Annee].&[20130101].children ON 1
+FROM [Distrisys]
+-- WHERE ( [Site].[Pays - Site].[Pays].&[FR] )

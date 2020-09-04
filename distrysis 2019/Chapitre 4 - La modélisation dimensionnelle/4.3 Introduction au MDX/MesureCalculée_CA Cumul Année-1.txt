@@ -1,0 +1,14 @@
+-- Script de la mesure calculée [CA Cumul Année-1]
+
+Sum
+(
+
+PeriodsToDate
+  ([Temps].[Année - Mois - Jour].[Année],
+[Temps].[Année - Mois - Jour].CurrentMember
+)
+,
+
+[Measures].[CA Mois Année-1]
+
+)

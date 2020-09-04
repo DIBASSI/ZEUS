@@ -1,0 +1,22 @@
+WITH
+MEMBER [CA Moy Mobile 6 mois] AS
+AVG
+(
+{[Temps].[Année - Mois - Jour].CurrentMember.Lag(5):[Temps].[Année - Mois - Jour].CurrentMember}
+	,
+	[Measures].[CA]
+),FORMAT_STRING="Currency"
+
+MEMBER [CA Somme Mobile 12 mois] AS
+SUM
+(
+{[Temps].[Année - Mois - Jour].CurrentMember.Lag(11):[Temps].[Année - Mois - Jour].CurrentMember}
+  ,
+  [Measures].[CA]
+),FORMAT_STRING="Currency"
+
+SELECT
+{[Measures].[CA], [CA Somme Mobile 12 mois], [CA Moy Mobile 12 mois]} ON 0,
+[Temps].[Année - Mois - Jour].[Annee].&[20100101].children
+ON 1
+FROM [Distrisys]

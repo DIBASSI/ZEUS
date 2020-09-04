@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DistrisysDW"
+  DTS:DTSID="{7F1F3F47-F64E-4814-A5F8-D747E342B1C1}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=Serveur1;Initial Catalog=DistrisysDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SA_Produit-{7F1F3F47-F64E-4814-A5F8-D747E342B1C1}Server1\r2.DistrisysSA;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

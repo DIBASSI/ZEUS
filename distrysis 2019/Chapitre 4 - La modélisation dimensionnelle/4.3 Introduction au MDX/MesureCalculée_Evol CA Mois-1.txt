@@ -1,0 +1,12 @@
+-- Script de la mesure calculée [% Evol CA Mois-1]
+
+Case
+
+When [Temps].[Année - Mois - Jour].CurrentMember.Level Is
+ [Temps].[Année - Mois - Jour].[Mois]
+	And [Measures].[CA Mois-1] <> 0
+
+Then [Measures].[CA]/[Measures].[CA Mois-1]-1
+Else Null
+
+End

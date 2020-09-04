@@ -1,0 +1,5 @@
+
+bcp DistrisysDW.dbo.FactStockMouvement out "FactStockMouvement.csv" -T -c -t";" -S"Serveur1"
+bcp DistrisysDW.dbo.FactStockMouvement in "FactStockMouvement.csv" -T -c -t";" -S"Serveur1"
+
+
